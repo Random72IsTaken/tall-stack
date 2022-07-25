@@ -1,0 +1,34 @@
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+
+# VSC Settings
+!/.vscode
+/.vscode/*
+!/.vscode/settings.json
+
+# Xdebug
+!/.vscode/launch.json
+
+# Laravel Sail
+!/vendor
+/vendor/*
+!/vendor/bin
+!/vendor/laravel
+/vendor/bin/*
+/vendor/laravel/*
+!/vendor/bin/sail
+!/vendor/laravel/sail

@@ -1,0 +1,56 @@
+{
+    // Better PHPUnit
+    "better-phpunit.docker.enable": true,
+    "better-phpunit.docker.command": "php",
+    // Emmet
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "postcss": "css"
+    },
+    //
+    // * =============
+    // * Intellisense
+    // * ===========
+    //
+    // Path Intellisense
+    "typescript.suggest.paths": false,
+    "javascript.suggest.paths": false,
+    // Laravel Extra Intellisense
+    "LaravelExtraIntellisense.basePathForCode": "/var/www/html",
+    // Laravel Intelephense
+    "files.associations": {
+        "*.module": "php"
+    },
+    // Tailwind CSS IntelliSense
+    "tailwindCSS.includeLanguages": {
+        "blade": "html"
+    },
+    "tailwindCSS.classAttributes": [
+        "class",
+        "x-bind:class",
+        "x-transition:enter",
+        "x-transition:enter-start",
+        "x-transition:enter-end",
+        "x-transition:leave",
+        "x-transition:leave-start",
+        "x-transition:leave-end"
+    ],
+    //
+    // * ===========
+    // * Foramtters
+    // * =========
+    //
+    // Prettier
+    "prettier.requireConfig": true,
+    "prettier.useEditorConfig": false,
+    // Blade Formatter
+    "bladeFormatter.format.sortTailwindcssClasses": true,
+    "bladeFormatter.format.wrapAttributes": "force-aligned",
+    //
+    "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    }
+}
