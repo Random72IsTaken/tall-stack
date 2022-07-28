@@ -1,6 +1,7 @@
 @props([
     'title' => null,
     'dir' => 'ltr',
+    'bodyClasses' => '',
 ])
 
 <!DOCTYPE html>
@@ -28,7 +29,11 @@
     @endif
 
     <!-- Fonts -->
-    @googlefonts
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
     @stack('fonts')
 
     <!-- Styles -->
@@ -40,7 +45,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
+<body class="{{ $bodyClasses }} antialiased">
+    @goodLoader
+
     {{ $slot }}
 
     <!-- Body Scripts -->

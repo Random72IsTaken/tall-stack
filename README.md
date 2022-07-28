@@ -30,16 +30,17 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 - [Livewire](https://laravel-livewire.com) v2.10.6
 - [Laravel](https://laravel.com) v9.20.0
 - [Vite.js](https://vitejs.dev/guide/why.html#the-problems) v3.0.2 (**Livewire Supportive**)
+- [TALL Stack Builder](https://github.com/GoodM4ven/tall-stack-builder) v1.0.0
 
 ### Opinionated (To Be Optional)
 
 - [Pest](https://pestphp.com) v1.2.0 (Testing Framework)
 - [Laravel Telescope](https://laravel.com/docs/telescope) v4.9.0 (Local Only)
 - [Laravel Scout](https://laravel.com/docs/scout) v9.4.10 (**Database** Driver)
-- [Google Fonts](https://github.com/spatie/laravel-google-fonts) v1.2.0
 - [Media-Library](https://github.com/spatie/laravel-medialibrary) v10.4.1
 - [Filament](https://filamentphp.com) v2.0.0 ([Admin](https://filamentphp.com/docs/admin), [Forms](https://filamentphp.com/docs/forms) and [Tables](https://filamentphp.com/docs/tables))
   - Including Spatie's [Media-Library](https://filamentphp.com/docs/2.x/spatie-laravel-media-library-plugin/installation) Plugin
+- [Good Loader](https://github.com/GoodM4ven/good-loader) v1.1.1
 
 ### Modifications
 
@@ -51,6 +52,8 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
   - Set a lot of essential and supportive VSC [`extensions`](https://github.com/GoodM4ven/tall-stack/blob/master/.devcontainer/devcontainer.json#L11) to be installed along the environment.
 
+    > **Note** [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) has a quick command to `Index workspace` for some PHP intellisense.
+
   - Included the following in version-control:
 
     - Essential [settings](.vscode/settings.json) for VSC and its extensions.
@@ -60,6 +63,8 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
     - Laravel Sail package in order for this whole thing to work **with only Docker installed**.
 
     - Xdebug dev-container VSC settings to start debugging easily.
+
+    - Vite's built-assets directory [/public/build].
 
   - Configured Vite.js to hot-reload the page upon file changes while preserving the state of Livewire components...
 
@@ -79,6 +84,8 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
   - Livewire's **temporary** upload filesystem is set to `local` though.
 
+    > **Warning** Remember to set your PHP's "max file upload size" and "max execution time" in production before uploading anything!
+
   - Livewire's **default `layout`** was set to the custom `master` layout we've created.
 
   - Some styles are defined in [`tailwind.config.js`](https://github.com/GoodM4ven/tall-stack/blob/master/tailwind.config.js) file, including:
@@ -91,17 +98,19 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
       - (Click Laravel's logo in the home page! 😉)
 
-  - Added `Mulish` as the default font via the Google Fonts package, and set its storage to `s3`.
+    - Specified `font-mulish` as a font-family class.
 
   - Set `visibility` to `public` in Media-Libary's config file, and set the storage to `s3`.
 
-  - Modified filament configurations as follows:
+  - Built Filament's theme to honor Tailwind's colors, and used it in a dedicated [service provider](app/Providers/FilamentServiceProvider.php).
+
+  - Modified Filament's configurations as follows:
 
     - Enabled dark mode.
 
     - Hidden the 2 widgets from the default dashboard, and the default logo.
 
-    - Added the default `favicon.ico` we've got for the app.
+    - Linked to the default `favicon.ico` we've got for the app.
 
     - Set the default notification alignment to `top`/`right`.
 
@@ -121,11 +130,17 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
   - Designed a [`master`](https://github.com/GoodM4ven/tall-stack/blob/master/resources/views/components/layouts/master.blade.php) layout component, with `@stack()`s for various elements.
 
+    - Applied `@goodLoader` directive to fade the view in.
+
   - Redesigned a [`home`](https://github.com/GoodM4ven/tall-stack/blob/master/resources/views/home.blade.php) view to shout out for the TALL stack!
 
     - Replacing the default route with one for `home`, of course.
 
     - Pointing `RouteServiceProvider`'s `HOME` constant to `/`.
+
+    - Added `Mulish` font link from [Google Fonts](https://fonts.google.com/specimen/Mulish).
+
+  - Aborted `/login` requests with `404`.
 
   - Organized the original environment variables and package-specific ones.
 
@@ -139,7 +154,7 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
     - Allowed this user to [access Filament](app/Models/User.php#L31) in production.
 
-  - Added an environment variable, `PASSWORD_TIMEOUT`, which points to the setting in `config/auth.php` file.
+  - Added an environment variable, `PASSWORD_TIMEOUT`, which points to the setting in [`config/auth.php`](config/auth.php#L109) file.
 
   </p>
   </details>
@@ -241,7 +256,7 @@ Now you can visit **[`http://localhost`](http://localhost)** and build something
 
      - If you're on Windows, there is an additional step shown in; follow the [Linux Host IP Configuration](https://laravel.com/docs/9.x/sail#debugging-with-xdebug) section in the docs.
 
-### Destrcution
+### Destruction
 
 If you're done with the project and wish to **delete** it completely, do the following:
 

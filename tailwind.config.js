@@ -15,7 +15,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Mulish', ...defaultTheme.fontFamily.sans],
+                mulish: ['Mulish', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 primary: colors.indigo,

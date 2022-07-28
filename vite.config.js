@@ -7,6 +7,7 @@ export default defineConfig({
         laravel([
             'resources/css/app.css',
             'resources/js/app.js',
+            'resources/css/filament.css',
         ]),
         {
             name: 'blade',
