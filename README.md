@@ -29,7 +29,9 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 - [Alpine.js](https://alpinejs.dev) v3.10.2 ([Focus](https://alpinejs.dev/plugins/focus) Plugin Installed)
 - [Livewire](https://laravel-livewire.com) v2.10.6
 - [Laravel](https://laravel.com) v9.20.0
-- [Vite.js](https://vitejs.dev/guide/why.html#the-problems) v3.0.2 (**Livewire Supportive**)
+- [Vite.js](https://vitejs.dev/guide/why.html#the-problems) v2.9.14
+  - [Laravel Plugin](https://github.com/laravel/vite-plugin) v0.2.4
+  - [Livewire Plugin](@defstudio/vite-livewire-plugin@) v0.1.15
 - [TALL Stack Builder](https://github.com/GoodM4ven/tall-stack-builder) v1.0.0
 
 ### Opinionated (To Be Optional)
@@ -41,6 +43,7 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 - [Filament](https://filamentphp.com) v2.0.0 ([Admin](https://filamentphp.com/docs/admin), [Forms](https://filamentphp.com/docs/forms) and [Tables](https://filamentphp.com/docs/tables))
   - Including Spatie's [Media-Library](https://filamentphp.com/docs/2.x/spatie-laravel-media-library-plugin/installation) Plugin
 - [Good Loader](https://github.com/GoodM4ven/good-loader) v1.1.1
+- [Good Night](https://github.com/GoodM4ven/good-night) v1.0.0
 
 ### Modifications
 
@@ -59,6 +62,8 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
     - Essential [settings](.vscode/settings.json) for VSC and its extensions.
 
       - You should check them out. Especially the HTML attribute wrapping strategy, `wrapAttribute`, used by Blade Formatter extension.
+
+    - A bit of essential [keybindings](.vscode/keybindings.json) too.
 
     - Laravel Sail package in order for this whole thing to work **with only Docker installed**.
 
@@ -245,6 +250,8 @@ Most of the following process is done with [VSC](https://code.visualstudio.com/)
     ```
 
     > **[Warning](www.google.com)**: You must ensure that Vite is running throughout development; an exception will be thrown for loading without it!
+
+    - Remember that, when you're tired of it, you can disable the VSC notification - that appreas after running this command - from the cog in its corner!
 
 Now you can visit **[`http://localhost`](http://localhost)** and build something tall! 🙂
 

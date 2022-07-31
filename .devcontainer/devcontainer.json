@@ -56,6 +56,7 @@
 		"deanhjjiang.split-line",
 		"wwm.better-align",
 		"cshum.convert-newline-list-to-array",
+		"sainoba.px-to-rem",
 		// Recommended
 		"Gruntfuggly.todo-tree",
 		"aaron-bond.better-comments",

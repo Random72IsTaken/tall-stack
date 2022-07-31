@@ -47,6 +47,7 @@
 
 <body class="{{ $bodyClasses }} antialiased">
     @goodLoader
+    @goodNight
 
     {{ $slot }}
 

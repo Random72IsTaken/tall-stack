@@ -14,12 +14,13 @@ yarn-error.log
 /.idea
 /.vscode
 
-# VSC Settings
+# VSC Settings & Bindings
 !/.vscode
 /.vscode/*
 !/.vscode/settings.json
+!/.vscode/keybindings.json
 
-# Xdebug
+# VSC Debug Settings (Xdebug)
 !/.vscode/launch.json
 
 # Laravel Sail
