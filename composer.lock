@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07a9fcc4d9bae831d374d2d3dc88eefe",
+    "content-hash": "0345052c538b78fff9e556c3b4d250a5",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -1290,6 +1290,69 @@
                 "source": "https://github.com/GoodM4ven/good-loader/tree/v1.1.1"
             },
             "time": "2022-07-28T01:54:27+00:00"
+        },
+        {
+            "name": "goodm4ven/good-night",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GoodM4ven/good-night.git",
+                "reference": "e4828cd4291906d56e9347857a4dfaa4eb43d11a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GoodM4ven/good-night/zipball/e4828cd4291906d56e9347857a4dfaa4eb43d11a",
+                "reference": "e4828cd4291906d56e9347857a4dfaa4eb43d11a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^6.0",
+                "orchestra/testbench": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GoodM4ven\\GoodNight\\GoodNightServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GoodM4ven\\GoodNight\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "GoodM4ven",
+                    "email": "minsulaiman@protonmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Switch the dark-mode of your TALL Stack application with ease.",
+            "homepage": "https://github.com/goodm4ven/good-night",
+            "keywords": [
+                "alpinejs",
+                "dark-mode",
+                "laravel",
+                "switcher",
+                "tailwindcss",
+                "tall-stack"
+            ],
+            "support": {
+                "issues": "https://github.com/GoodM4ven/good-night/issues",
+                "source": "https://github.com/GoodM4ven/good-night/tree/v1.0.0"
+            },
+            "time": "2022-07-14T03:25:28+00:00"
         },
         {
             "name": "goodm4ven/tall-stack-builder",

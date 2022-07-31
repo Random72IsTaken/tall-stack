@@ -25,6 +25,7 @@
         "filament/spatie-laravel-media-library-plugin": "^2.0",
         "filament/tables": "^2.0",
         "goodm4ven/good-loader": "^1.1",
+        "goodm4ven/good-night": "^1.0",
         "goodm4ven/tall-stack-builder": "^1.0.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.21",

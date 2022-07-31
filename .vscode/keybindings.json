@@ -1,0 +1,11 @@
+[
+    // Unassignments
+    {
+        "key": "alt+s",
+        "command": "-extension.pxPerRem"
+    },
+    {
+        "key": "alt+z",
+        "command": "-extension.pxToremAndRemToPx"
+    }
+]

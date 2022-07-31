@@ -11,8 +11,8 @@
                 <div class="space-y-6">
                     <button class="w-full"
                             type="button"
-                            x-data="{}"
-                            x-on:click="document.documentElement.classList.toggle('dark')">
+                            x-data="goodNight()"
+                            x-bind="custom">
                         <x-home.application-logo class="mx-auto h-16 fill-indigo-600 dark:fill-amber-500" />
                     </button>
 
