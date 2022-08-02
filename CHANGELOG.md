@@ -2,6 +2,10 @@
 
 All notable changes to `tall-stack` will be documented in this file.
 
+## Release v1.3.0 - 2022-08-02
+
+**Full Changelog**: https://github.com/GoodM4ven/tall-stack/compare/v1.2.0...v1.3.0
+
 ## Release v1.2.0 - 2022-07-31
 
 **Full Changelog**: https://github.com/GoodM4ven/tall-stack/compare/v1.1.0...v1.2.0
