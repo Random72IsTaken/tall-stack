@@ -34,6 +34,7 @@
         "laravel/tinker": "^2.7",
         "league/flysystem-aws-s3-v3": "^3.0",
         "livewire/livewire": "^2.10",
+        "pusher/pusher-php-server": "^7.0",
         "spatie/laravel-medialibrary": "^10.0.0"
     },
     "require-dev": {

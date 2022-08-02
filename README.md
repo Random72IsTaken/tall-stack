@@ -21,6 +21,7 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 3. [Redis](https://redis.io/):alpine (Port: 6379)
 4. [Mailhog](https://github.com/mailhog/MailHog):latest (Port: 1025 | [8025](http://localhost:8025))
 5. [MinIO](https://min.io/):latest (Port: 9000 | [8900](http://localhost:8900))
+6. [Soketi](https://soketi.app/):latest-16-alpine (Port: 6001 | [9601](http://localhost:9601/usage))
 
 ### Packages
 
@@ -37,11 +38,13 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 ### Opinionated (To Be Optional)
 
 - [Pest](https://pestphp.com) v1.2.0 (Testing Framework)
+- [Laravel Echo](https://laravel.com/docs/broadcasting) v1.13.0 (Soketi)
+  - [Pusher PHP Server](https://github.com/pusher/pusher-http-php) v7.0.2 (Soketi)
 - [Laravel Telescope](https://laravel.com/docs/telescope) v4.9.0 (Local Only)
 - [Laravel Scout](https://laravel.com/docs/scout) v9.4.10 (**Database** Driver)
 - [Media-Library](https://github.com/spatie/laravel-medialibrary) v10.4.1
 - [Filament](https://filamentphp.com) v2.0.0 ([Admin](https://filamentphp.com/docs/admin), [Forms](https://filamentphp.com/docs/forms) and [Tables](https://filamentphp.com/docs/tables))
-  - Including Spatie's [Media-Library](https://filamentphp.com/docs/2.x/spatie-laravel-media-library-plugin/installation) Plugin
+  - Including Spatie's [Media-Library](https://filamentphp.com/docs/spatie-laravel-media-library-plugin/installation) Plugin
 - [Good Loader](https://github.com/GoodM4ven/good-loader) v1.1.1
 - [Good Night](https://github.com/GoodM4ven/good-night) v1.0.0
 
@@ -78,6 +81,8 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
     > **Warning**
     > Please be aware that Vite's traffic is **blocked by Brave browser's Shield** feature. So make sure you click on it and disable it for `localhost`.
+
+  - Uncommented and therefore exposed Laravel [`Echo`](resources/js/bootstrap.js#L21) for real-time broadcasting; as Soketi is already setup with Pusher's boilerplate.
 
   </p>
   </details>
@@ -297,7 +302,6 @@ If you're done with the project and wish to **delete** it completely, do the fol
   - [x] Create a separate package for easier installation.
     - (The details are over [here](https://github.com/GoodM4ven/tall-stack-builder#TODOs))
   - [ ] Rework documentation.
-- [ ] Integrate [Soketi](https://github.com/soketi/soketi) as an alternative for real-time [broadcasting](https://laravel.com/docs/9.x/broadcasting).
 - [ ] Integrate [Cypress](https://github.com/laracasts/cypress) as a [front-end testing](https://cypress.io) framework.
 - [ ] Write [Pest](https://pestphp.com) and [Cypress](https://cypress.io) tests, one day!
 - [ ] Create a wiki page for VSC extensions and shortcuts.
@@ -320,6 +324,7 @@ If you're done with the project and wish to **delete** it completely, do the fol
 - The original TALL Stack preset and their home [design](https://github.com/laravel-frontend-presets/tall/blob/master/stubs/default/resources/views/welcome.blade.php).
 - TailwindCSS [Snippets](https://github.com/Pondorasti/tailwindcss-snippets) repository.
 - [RhysLees](https://github.com/RhysLees) for the "interactive prompts" tip.
+- [rennokki](https://github.com/rennokki) for Soketi and [oanhnn](https://github.com/oanhnn) for its integration.
 
 If you like the preset, please do 🌟 every repository linked around here; except this preset.
 
