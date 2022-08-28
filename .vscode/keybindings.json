@@ -1,4 +1,12 @@
 [
+    {
+        "key": "ctrl+shift+r",
+        "command": "better-pest.run"
+    },
+    {
+        "key": "ctrl+shift+alt+r",
+        "command": "better-pest.run-previous"
+    },
     // Unassignments
     {
         "key": "alt+s",

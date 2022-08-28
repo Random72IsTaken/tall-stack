@@ -52,8 +52,8 @@
     {{ $slot }}
 
     <!-- Body Scripts -->
-    @livewireScripts
     @stack('bodyScripts')
+    @livewireScripts
 </body>
 
 </html>

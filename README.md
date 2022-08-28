@@ -11,25 +11,26 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 ~ Inspired by the actual [tall](https://github.com/laravel-frontend-presets/tall/) preset!
 
 
-## Core
+## Stack
 
-### Services
+### Containers
 
-1. [PHP](https://www.php.net/):8.1.8 (Port: [80](http://localhost:80))
-   - [Xdebug](https://xdebug.org/):3.1.4 (Port: 9003)
-2. [MySQL](https://www.mysql.com/):8.0.29 (Port: 3306)
+1. [PHP](https://www.php.net/):8.1.9 (Port: [80](http://localhost:80))
+   - [Xdebug](https://xdebug.org/):3.1.5 (Port: 9003)
+2. [MySQL](https://www.mysql.com/):8.0.30 (Port: 3306)
 3. [Redis](https://redis.io/):alpine (Port: 6379)
 4. [Mailhog](https://github.com/mailhog/MailHog):latest (Port: 1025 | [8025](http://localhost:8025))
 5. [MinIO](https://min.io/):latest (Port: 9000 | [8900](http://localhost:8900))
 6. [Soketi](https://soketi.app/):latest-16-alpine (Port: 6001 | [9601](http://localhost:9601/usage))
+7. [Expose](https://expose.dev):latest (Port: **8080** | [4040](http://localhost:4040))
 
 ### Packages
 
-- [Laravel Sail](https://github.com/laravel/sail) v1.15.0 (DevContainer)
-- [TailwindCSS](https://tailwindcss.com) v3.1.6 ([Forms](https://github.com/tailwindlabs/tailwindcss-forms) and [Typography](https://tailwindcss.com/docs/typography-plugin) Plugins Installed)
-- [Alpine.js](https://alpinejs.dev) v3.10.2 ([Focus](https://alpinejs.dev/plugins/focus) Plugin Installed)
-- [Livewire](https://laravel-livewire.com) v2.10.6
-- [Laravel](https://laravel.com) v9.20.0
+- [Laravel Sail](https://github.com/laravel/sail) v1.15.4 (DevContainer)
+- [TailwindCSS](https://tailwindcss.com) v3.1.8 ([Forms](https://github.com/tailwindlabs/tailwindcss-forms) and [Typography](https://tailwindcss.com/docs/typography-plugin) Plugins Installed)
+- [Alpine.js](https://alpinejs.dev) v3.10.3 ([Focus](https://alpinejs.dev/plugins/focus) Plugin Installed)
+- [Livewire](https://laravel-livewire.com) v2.10.7
+- [Laravel](https://laravel.com) v9.26.1
 - [Vite.js](https://vitejs.dev/guide/why.html#the-problems) v2.9.14
   - [Laravel Plugin](https://github.com/laravel/vite-plugin) v0.2.4
   - [Livewire Plugin](@defstudio/vite-livewire-plugin@) v0.1.15
@@ -37,13 +38,13 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
 ### Opinionated (To Be Optional)
 
-- [Pest](https://pestphp.com) v1.2.0 (Testing Framework)
-- [Laravel Echo](https://laravel.com/docs/broadcasting) v1.13.0 (Soketi)
-  - [Pusher PHP Server](https://github.com/pusher/pusher-http-php) v7.0.2 (Soketi)
-- [Laravel Telescope](https://laravel.com/docs/telescope) v4.9.0 (Local Only)
+- [Pest](https://pestphp.com) v1.21.3 (Testing Framework)
+- [Laravel Echo](https://laravel.com/docs/broadcasting) v1.13.1 (Soketi)
+  - [Pusher PHP Server](https://github.com/pusher/pusher-http-php) v7.4.0 (Soketi)
+- [Laravel Telescope](https://laravel.com/docs/telescope) v4.9.2 (Local Only)
 - [Laravel Scout](https://laravel.com/docs/scout) v9.4.10 (**Database** Driver)
-- [Media-Library](https://github.com/spatie/laravel-medialibrary) v10.4.1
-- [Filament](https://filamentphp.com) v2.0.0 ([Admin](https://filamentphp.com/docs/admin), [Forms](https://filamentphp.com/docs/forms) and [Tables](https://filamentphp.com/docs/tables))
+- [Media-Library](https://github.com/spatie/laravel-medialibrary) v10.4.4
+- [Filament](https://filamentphp.com) v2.15.28 ([Admin](https://filamentphp.com/docs/admin), [Forms](https://filamentphp.com/docs/forms), [Tables](https://filamentphp.com/docs/tables), and [Notifications](https://filamentphp.com/docs/notifications))
   - Including Spatie's [Media-Library](https://filamentphp.com/docs/spatie-laravel-media-library-plugin/installation) Plugin
 - [Good Loader](https://github.com/GoodM4ven/good-loader) v1.1.1
 - [Good Night](https://github.com/GoodM4ven/good-night) v1.0.0
@@ -56,23 +57,29 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 - <details><summary>Environment Related</summary>
   <p>
 
+  - When the container runs, **Expose will share the application automatically**; but it's still protected with HTTP authentication using the credentials set in the environment variables.
+
+    - The site's generated domain can be found in Expose's [dashboard](http://localhost:4040) yet at port 8080, or can be expected from Docker's `-expose-` container's log.
+
   - Set a lot of essential and supportive VSC [`extensions`](https://github.com/GoodM4ven/tall-stack/blob/master/.devcontainer/devcontainer.json#L11) to be installed along the environment.
 
     > **Note** [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) has a quick command to `Index workspace` for some PHP intellisense.
 
+  - Overridden essential [settings](.vscode/settings.json) for VSC and its extensions.
+
+    - You should check them out. Especially the HTML attribute wrapping strategy, `wrapAttribute`, used by Blade Formatter extension.
+
+  - Enforced a bit of essential VSC [keybindings](.vscode/keybindings.json) too.
+
   - Included the following in version-control:
-
-    - Essential [settings](.vscode/settings.json) for VSC and its extensions.
-
-      - You should check them out. Especially the HTML attribute wrapping strategy, `wrapAttribute`, used by Blade Formatter extension.
-
-    - A bit of essential [keybindings](.vscode/keybindings.json) too.
 
     - Laravel Sail package in order for this whole thing to work **with only Docker installed**.
 
     - Xdebug dev-container VSC settings to start debugging easily.
 
     - Vite's built-assets directory [/public/build].
+
+  - Excluded some unrelated paths from version-control, such as `Homestead.json`, for instance.
 
   - Configured Vite.js to hot-reload the page upon file changes while preserving the state of Livewire components...
 
@@ -98,6 +105,8 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
   - Livewire's **default `layout`** was set to the custom `master` layout we've created.
 
+  - Pest is setup to ignore Vite HMR exception while testing, and to consider [tests/Unit] directory.
+
   - Some styles are defined in [`tailwind.config.js`](https://github.com/GoodM4ven/tall-stack/blob/master/tailwind.config.js) file, including:
 
     - Defined `content` for Blade file directories.
@@ -122,7 +131,7 @@ Until the customization feature is ready, this preset is clearly *opinionated*.
 
     - Linked to the default `favicon.ico` we've got for the app.
 
-    - Set the default notification alignment to `top`/`right`.
+    - Set the default notification alignment to `bottom`/`right`.
 
   </p>
   </details>
@@ -226,6 +235,9 @@ Most of the following process is done with [VSC](https://code.visualstudio.com/)
    ENV_USER_EMAIL=sail@laravel.com
    ENV_USER_PASSWORD=password
    DB_DATABASE=tall_stack # application_name
+   EXPOSE_AUTH_TOKEN="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" # Register At https://expose.dev
+   EXPOSE_USERNAME=sail # HTTP Authentication
+   EXPOSE_PASSWORD=password # HTTP Authentication
    ```
 
 4. Install the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension.

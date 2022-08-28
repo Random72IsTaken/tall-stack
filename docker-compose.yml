@@ -25,8 +25,10 @@ services:
         depends_on:
             - mysql
             - redis
+            - mailhog
             - minio
             - soketi
+            - expose
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
@@ -103,6 +105,28 @@ services:
             test: ['CMD', 'wget', '--no-verbose', '--spider',  'http://localhost:6001']
             retries: 3
             timeout: 5s
+    expose:
+        image: beyondcodegmbh/expose-server:latest
+        volumes:
+            - 'sail-expose:/root/.expose'
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        ports:
+            - 8080:${EXPOSE_SERVER_PORT:-8080}
+            - 4040:${EXPOSE_DASHBOARD_PORT:-4040}
+        networks:
+            - sail
+        environment:
+            domain: ${EXPOSE_SERVER_HOST:-laravel-sail.site}
+            port: ${EXPOSE_SERVER_PORT:-8080}
+            username: ${EXPOSE_USERNAME:-sail}
+            password: ${EXPOSE_PASSWORD:-password}
+            token: ${EXPOSE_AUTH_TOKEN:-""}
+        entrypoint: ["/bin/sh","-c"]
+        command:
+            - |
+                ./expose token ${EXPOSE_AUTH_TOKEN}
+                ./expose share host.docker.internal --server-host="${EXPOSE_SERVER_HOST}" --server-port=${EXPOSE_SERVER_PORT} --basicAuth="${EXPOSE_USERNAME}:${EXPOSE_PASSWORD}"
 networks:
     sail:
         driver: bridge
@@ -112,4 +136,6 @@ volumes:
     sail-redis:
         driver: local
     sail-minio:
+        driver: local
+    sail-expose:
         driver: local

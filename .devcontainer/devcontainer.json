@@ -45,6 +45,7 @@
 		"bourhaouta.tailwindshades",
 		// Supportive
 		"esbenp.prettier-vscode",
+		"moshfeu.compare-folders",
 		"wix.vscode-import-cost",
 		"dbankier.vscode-quick-select",
 		"albert.TabOut",
@@ -56,6 +57,7 @@
 		"deanhjjiang.split-line",
 		"wwm.better-align",
 		"cshum.convert-newline-list-to-array",
+		"albymor.increment-selection",
 		"sainoba.px-to-rem",
 		// Recommended
 		"Gruntfuggly.todo-tree",

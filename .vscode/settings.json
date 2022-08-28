@@ -45,7 +45,8 @@
     "prettier.useEditorConfig": false,
     // Blade Formatter
     "bladeFormatter.format.sortTailwindcssClasses": true,
-    "bladeFormatter.format.wrapAttributes": "force-aligned",
+    "bladeFormatter.format.wrapAttributes": "force-expand-multiline",
+    "bladeFormatter.format.sortHtmlAttributes": "none",
     //
     "[blade]": {
         "editor.defaultFormatter": "shufo.vscode-blade-formatter"
